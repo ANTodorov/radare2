@@ -146,7 +146,7 @@ static int r_io_zip_slurp_file(RIOZipFileObj *zfo) {
 			if (buf) {
 				zip_fread (zFile, buf, sb.size);
 				r_buf_set_bytes (zfo->b, buf, sb.size);
-				res = zfo->opened = true;
+				res = (zfo->opened = true);
 				free (buf);
 			}
 		}
